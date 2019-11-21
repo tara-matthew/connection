@@ -1,5 +1,5 @@
 function setup() {
-    createCanvas(400,400);
+    createCanvas(600,600);
 
     heading = createElement(`p`, 'How many people?');
     heading.position(20,5);
@@ -13,6 +13,30 @@ function setup() {
         const numOfPeople = int(input.value());
         getConnections(numOfPeople);
     });
+
+    drawCirclePoints(5, 150, 300, 300);
+}
+
+function draw() {
+    ellipse(300, 300, 300, 300);
+    ellipse(450, 300, 10, 10);
+    ellipse(346.3525491562421, 442.658477444273, 10, 10);
+    ellipse(178.6474508437579, 388.167787843871, 10, 10);
+    ellipse(178.6474508437579, 211.83221215612906, 10, 10);
+    ellipse(346.3525491562421, 157.34152255572695, 10, 10);
+
+
+}
+
+function drawCirclePoints(points, radius, centreX, centreY) {
+    var slice = 2 * PI / points;
+    for (var i = 0; i < points; i++) {
+        angle = slice * i;
+        newX = centreX + radius * cos(angle);
+        newY = centreY + radius * sin(angle);
+
+        print(newX, newY);
+    }
 }
 
 function getConnection() {
