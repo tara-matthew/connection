@@ -29,13 +29,13 @@ function draw() {
 }
 
 function drawCirclePoints(points, radius, centreX, centreY) {
+    strokeWeight(1);
     var slice = 2 * PI / points;
     for (var i = 0; i < points; i++) {
         angle = slice * i;
         newX = centreX + radius * cos(angle);
         newY = centreY + radius * sin(angle);
-
-        print(newX, newY);
+        ellipse(newX, newY, 10, 10);
     }
 }
 
