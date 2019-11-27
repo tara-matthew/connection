@@ -15,16 +15,14 @@ function setup() {
         getConnections(numOfPeople);
     });
 
-    drawCirclePoints(5, 150, 300, 300);
 }
 
 function draw() {
-    ellipse(300, 300, 300, 300);
-    ellipse(450, 300, 10, 10);
-    ellipse(346.3525491562421, 442.658477444273, 10, 10);
-    ellipse(178.6474508437579, 388.167787843871, 10, 10);
-    ellipse(178.6474508437579, 211.83221215612906, 10, 10);
-    ellipse(346.3525491562421, 157.34152255572695, 10, 10);
+    translate(width / 2, height / 2);
+    scale(1);
+    drawCircle(400, 0, 0);
+    drawCirclePoints(250,400,0,0);
+}
 
 function drawCircle(radius, centreX, centreY) {
     frameRate(60);
