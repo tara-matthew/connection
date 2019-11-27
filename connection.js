@@ -25,7 +25,21 @@ function draw() {
     ellipse(178.6474508437579, 211.83221215612906, 10, 10);
     ellipse(346.3525491562421, 157.34152255572695, 10, 10);
 
+function drawCircle(radius, centreX, centreY) {
+    frameRate(60);
+    stroke(0);
+    strokeWeight(4);
+    noFill();
 
+    newX = centreX + radius * cos(ang);
+    newY = centreY + radius * sin(ang)
+
+
+    if (ang < 2*PI) {
+        point(newX, newY);
+        print(ang);
+        ang += 2*PI/(radius);
+    }
 }
 
 function drawCirclePoints(points, radius, centreX, centreY) {
