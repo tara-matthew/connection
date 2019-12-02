@@ -24,6 +24,15 @@ function draw() {
     drawCirclePoints(250,400,0,0);
 }
 
+function drawLines(points) {
+    for (var i = 0; i < points.length-3; i +=4) {
+        for (var j = 2; j < points.length-5; j +=4) {
+            strokeWeight(.25);
+            line(points[i], points[i+1], points[j], points[j+1])
+        }
+    }
+}
+
 function drawCircle(radius, centreX, centreY) {
     frameRate(60);
     stroke(0);
@@ -50,6 +59,26 @@ function drawCirclePoints(points, radius, centreX, centreY) {
         newY = centreY + radius * sin(angle);
         ellipse(newX, newY, 10, 10);
     }
+}
+
+function calculateCirclePoints(points, radius, centreX, centreY) {
+    var slice = 2 * PI / points;
+    let circleAngle = 0;
+    newCoords = [];
+    while (circleAngle < points) {
+
+        angle = slice * circleAngle;
+        let newX = centreX + radius * cos(angle);
+        let newY = centreY + radius * sin(angle);
+
+        newCoords.push(newX);
+        newCoords.push(newY);
+
+        circleAngle++;
+    }
+
+    return newCoords;
+
 }
 
 function getConnection() {
