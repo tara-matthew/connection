@@ -12,7 +12,7 @@ function draw() {
 
 
 function drawLines(points) {
-    for (let i = 0; i < points.length-3; i +=4) {
+    for (let i = 0; i < points.length-3; i +=2) {
         setTimeout(function timer() {
             for (let j = 2; j < points.length-1; j +=2) {
                 strokeWeight(.25);
