@@ -1,13 +1,27 @@
+let pointNumber = 1;
+
 function setup() {
     createCanvas(700,700);
+function reset() {
+    clear();
+    pointNumber = pointNumber + 1
+    print(pointNumber);
+    var circlePoints = calculateCirclePoints(pointNumber,280,0,0);
+    drawLines(circlePoints);
+
+    setTimeout(reset,((circlePoints.length-4) * 80) + 300);
+
+
 }
 
 function draw() {
     noLoop();
     translate(width / 2, height / 2);
     scale(1);
-    var circlePoints = calculateCirclePoints(100,280,0,0);
+    var circlePoints = calculateCirclePoints(pointNumber,280,0,0);
     drawLines(circlePoints);
+
+    setTimeout(reset,((circlePoints.length-4) * 80) + 300);
 }
 
 
