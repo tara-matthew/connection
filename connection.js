@@ -24,7 +24,7 @@ function calculateCirclePoints(points, radius, centreX, centreY) {
     var slice = 2 * PI / points;
     let circleAngle = 0;
     newCoords = [];
-    while (circleAngle < points) {
+    while (circleAngle <= points) {
 
         angle = slice * circleAngle;
         let newX = centreX + radius * cos(angle);
