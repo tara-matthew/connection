@@ -26,8 +26,8 @@ function draw() {
 
 function drawLines(points) {
     for (var i = 0; i < points.length-3; i +=4) {
-        for (var j = 2; j < points.length-5; j +=4) {
-            strokeWeight(.25);
+        for (var j = 2; j < points.length-1; j +=2) {
+            strokeWeight(.8);
             line(points[i], points[i+1], points[j], points[j+1])
         }
     }
