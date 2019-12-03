@@ -18,10 +18,11 @@ function setup() {
 }
 
 function draw() {
+    noLoop();
     translate(width / 2, height / 2);
     scale(1);
-    drawCircle(400, 0, 0);
-    drawCirclePoints(250,400,0,0);
+    var circlePoints = calculateCirclePoints(20,280,0,0);
+    drawLines(circlePoints);
 }
 
 function drawLines(points) {
