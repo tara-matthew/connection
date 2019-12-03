@@ -1,20 +1,8 @@
 let ang = 0;
+let circAng = 0;
+
 function setup() {
-    createCanvas(600,600);
-
-    heading = createElement(`p`, 'How many people?');
-    heading.position(20,5);
-
-    input = createInput();
-    input.position(150,20);
-
-    button = createButton('Tell me pls');
-    button.position(input.x + input.width + 10, 20);
-    button.mousePressed(function() {
-        const numOfPeople = int(input.value());
-        getConnections(numOfPeople);
-    });
-
+    createCanvas(700,700);
 }
 
 function draw() {
