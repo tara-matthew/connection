@@ -53,11 +53,20 @@ function drawCircle(radius, centreX, centreY) {
 function drawCirclePoints(points, radius, centreX, centreY) {
     strokeWeight(1);
     var slice = 2 * PI / points;
-    for (var i = 0; i < points; i++) {
-        angle = slice * i;
-        newX = centreX + radius * cos(angle);
-        newY = centreY + radius * sin(angle);
-        ellipse(newX, newY, 10, 10);
+    if (circAng < points) {
+        if (circAng % 2 == 1) {
+            stroke('rgb(0,255,0)');
+            fill('rgb(0,255,0)');
+        } else {
+            stroke('rgb(255,0,0)');
+            fill('rgb(255,0,0)');
+        }
+        angle = slice * circAng;
+        let newX = centreX + radius * cos(angle);
+        let newY = centreY + radius * sin(angle);
+        ellipse(newX, newY, 7, 7);
+
+        circAng++;
     }
 }
 
