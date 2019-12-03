@@ -1,4 +1,3 @@
-
 function setup() {
     createCanvas(700,700);
 }
@@ -7,16 +6,29 @@ function draw() {
     noLoop();
     translate(width / 2, height / 2);
     scale(1);
-    var circlePoints = calculateCirclePoints(20,280,0,0);
+    var circlePoints = calculateCirclePoints(100,280,0,0);
     drawLines(circlePoints);
 }
 
+
 function drawLines(points) {
-    for (var i = 0; i < points.length-3; i +=4) {
-        for (var j = 2; j < points.length-1; j +=2) {
-            strokeWeight(.8);
-            line(points[i], points[i+1], points[j], points[j+1])
-        }
+    for (let i = 0; i < points.length-3; i +=4) {
+        setTimeout(function timer() {
+            for (let j = 2; j < points.length-1; j +=2) {
+                strokeWeight(.25);
+                // stroke('rgb(255,0,0)');
+                // fill('rgb(255,0,0)');
+                setTimeout(function timer() {
+                    // let r = random([0,255]);
+                    // let g = random([180,255]);
+                    // stroke(r,g,0);
+                    // fill(r,g,0);
+                    line(points[i], points[i+1], points[j], points[j+1]);
+                }, j * 70)
+
+            }
+        }, i * 3)
+
     }
 }
 
