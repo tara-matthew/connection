@@ -36,17 +36,18 @@ function drawLines(points) {
 function drawCircle(radius, centreX, centreY) {
     frameRate(60);
     stroke(0);
-    strokeWeight(4);
+    strokeWeight(5);
     noFill();
 
     newX = centreX + radius * cos(ang);
     newY = centreY + radius * sin(ang)
 
-
     if (ang < 2*PI) {
         point(newX, newY);
-        print(ang);
-        ang += 2*PI/(radius);
+        ang += 2*PI/(radius*1.45);
+    } else {
+        drawCirclePoints(10,280,0,0);
+
     }
 }
 
