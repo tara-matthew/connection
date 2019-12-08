@@ -6,9 +6,12 @@ function setup() {
 
 function reset() {
     print('new');
+
+    // Increases the number of points on every iteration
     if (pointNumber <= 80) {
         pointNumber = pointNumber + 1
     } else {
+        // Start again!
         pointNumber = 1;
     }
     clear();
