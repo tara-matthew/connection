@@ -1,10 +1,17 @@
 let pointNumber = 1;
 
 function setup() {
-    createCanvas(700,700);
+    createCanvas(700,700)
+}
+
 function reset() {
+    print('new');
+    if (pointNumber <= 80) {
+        pointNumber = pointNumber + 1
+    } else {
+        pointNumber = 1;
+    }
     clear();
-    pointNumber = pointNumber + 1
     print(pointNumber);
     var circlePoints = calculateCirclePoints(pointNumber,280,0,0);
     drawLines(circlePoints);
@@ -30,20 +37,15 @@ function drawLines(points) {
         setTimeout(function timer() {
             for (let j = 2; j < points.length-1; j +=2) {
                 strokeWeight(.25);
-                // stroke('rgb(255,0,0)');
-                // fill('rgb(255,0,0)');
                 setTimeout(function timer() {
-                    // let r = random([0,255]);
-                    // let g = random([180,255]);
-                    // stroke(r,g,0);
-                    // fill(r,g,0);
                     line(points[i], points[i+1], points[j], points[j+1]);
-                }, j * 70)
+                }, j * 3)
 
             }
-        }, i * 3)
+        }, i * 80)
 
     }
+
 }
 
 function calculateCirclePoints(points, radius, centreX, centreY) {
