@@ -12,14 +12,14 @@ function reset() {
         pointNumber = pointNumber + 1
     } else {
         // Start again!
-        pointNumber = 1;
+        pointNumber = 2;
     }
     clear();
     print(pointNumber);
     var circlePoints = calculateCirclePoints(pointNumber,280,0,0);
     drawLines(circlePoints);
 
-    setTimeout(reset,((circlePoints.length-4) * 80) + 300);
+    setTimeout(reset,((circlePoints.length-4) * 80) + 800);
 
 
 }
